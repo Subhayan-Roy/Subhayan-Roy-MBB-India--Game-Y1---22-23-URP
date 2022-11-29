@@ -74,7 +74,7 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: 0.9014487, z: 0}
+  - {x: 0, y: 0.9, z: 0}
   - {x: 0, y: 6, z: 0}
   m_Parameters:
     serializedVersion: 3
@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimLineGO: {fileID: 317318265744629644}
+  ballPrefabGO: {fileID: 6180387109173756824, guid: 8fb33f74d72912346995b01a1897b099, type: 3}
 --- !u!1 &3159424825571655288
 GameObject:
   m_ObjectHideFlags: 0

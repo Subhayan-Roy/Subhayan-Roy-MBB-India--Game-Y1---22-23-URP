@@ -9,12 +9,15 @@ public class Brick : MonoBehaviour
 
 	private GameManager gameManager;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
 		//Find the GameManager instance in the Scene
 		gameManager = FindObjectOfType<GameManager>();
+	}
 
+    // Start is called before the first frame update
+    void Start()
+    {
 		//The Brick informs the Game Manager that a Brick is in the Scene
 		gameManager.BrickIsBorn();
     }

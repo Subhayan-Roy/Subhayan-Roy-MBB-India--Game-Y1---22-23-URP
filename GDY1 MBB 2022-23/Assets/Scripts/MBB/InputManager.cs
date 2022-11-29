@@ -44,7 +44,7 @@ public class InputManager : MonoBehaviour
 		//If the finger is lifted from the screen
 		if (Input.GetMouseButtonUp(0))
 		{
-			cannon.DoOnButtonUp();
+			
 
 			if ((startDragPosition - endDragPosition).magnitude >= minimumFingerDistance) //If finger drag distance is more than minimum, validate the input
 			{
@@ -79,6 +79,7 @@ public class InputManager : MonoBehaviour
 
 	void EndDrag()
 	{
+		cannon.DoOnButtonUp();
 		//gameManager.InputEnded(); //<-- !!! Ref to GM has not been added in class, and I didn't ask them to do it in assignment, hence this is commented
 	}
 }
