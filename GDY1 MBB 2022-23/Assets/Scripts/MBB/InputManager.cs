@@ -6,16 +6,25 @@ public class InputManager : MonoBehaviour
 {
 	//[SerializeField] private GameManager gameManager; //<-- !!! This has not been done in class
 	public float minimumFingerDistance = 0.25f; //minimum finger distance travelled needed to validate the input
+	public bool isActive;
+
 
 	Vector3 locationOfFinger;   //stores the current location of finger
 	Vector3 startDragPosition;  //stores the position of the first touch
 	Vector3 endDragPosition;	//stores the position of the last touch
 
 	private Cannon cannon; //reference to the Cannon instance
+	GameManager gameManager;
 
-	public void Start()
-	{
+    public void Awake()
+    {
 		cannon = FindObjectOfType<Cannon>();
+		gameManager = GetComponent<GameManager>();
+	}
+
+    public void Start()
+	{
+		
 	}
 
 	// Update is called once per frame
@@ -44,11 +53,12 @@ public class InputManager : MonoBehaviour
 		//If the finger is lifted from the screen
 		if (Input.GetMouseButtonUp(0))
 		{
-			
+			//Shifted to here to solve the aimline and no input named as the "Aditya" bug
+			cannon.DoOnButtonUp(); //Makes Aimline disappear only irrespective of whether it's a tap or a drag
 
 			if ((startDragPosition - endDragPosition).magnitude >= minimumFingerDistance) //If finger drag distance is more than minimum, validate the input
 			{
-				EndDrag();
+				EndDrag(); //Call enddrag which calls the release ball function and change game state function
 			}
 
 		}
@@ -79,7 +89,42 @@ public class InputManager : MonoBehaviour
 
 	void EndDrag()
 	{
-		cannon.DoOnButtonUp();
+		cannon.ReleaseBallsWithGap(); //Call releasethyballs function from cannon script
+		gameManager.ChangeGameState(GameManager.GameStatesDATA.ACTION); //Call changegamestate function and set it to Action
 		//gameManager.InputEnded(); //<-- !!! Ref to GM has not been added in class, and I didn't ask them to do it in assignment, hence this is commented
+	}
+
+	/// <summary>
+	/// Function to check whether the Input manager is active or not
+	/// </summary>
+	/// <returns>isActive boolean variable</returns>
+	public bool IsInputManagerActive() 
+	{
+		if (this.enabled /*if script component is enabled*/)
+		{
+			isActive = true; //Set isActive boolean value to true
+		}
+		else /*if script component is disabled*/
+		{
+			isActive = false; //Set isActive boolean value to false
+		}
+
+		return isActive; //return the value of the boolean isActive
+	}
+
+	/// <summary>
+	/// Enable the Input Manager Script Component
+	/// </summary>
+	public void EnableInputManager()
+	{
+		this.enabled = true; //set the enabled property of this script to true
+	}
+
+	/// <summary>
+	/// Disable the Input Manager Script Component
+	/// </summary>
+	public void DisableInputManager()
+	{
+		this.enabled = false; //set the enabled property of this script to false
 	}
 }
