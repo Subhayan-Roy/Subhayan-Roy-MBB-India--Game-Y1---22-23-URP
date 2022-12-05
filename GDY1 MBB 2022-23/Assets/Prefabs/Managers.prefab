@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68288608fb8bc8043843ec52fbc1d158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameStatesVAR: 0
+  gameStartTime: 3
 --- !u!114 &4144232053841236797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,3 +60,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minimumFingerDistance: 0.25
+  isActive: 0

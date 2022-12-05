@@ -39,6 +39,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 352968305
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: In-Game Text
+    uniqueID: 1336683771
+    locked: 0
+  - name: Vfx
+    uniqueID: 3872761777
     locked: 0

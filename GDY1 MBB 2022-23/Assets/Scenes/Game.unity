@@ -364,14 +364,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cannon
       objectReference: {fileID: 0}
-    - target: {fileID: 4223360811534386619, guid: a62623eacac036b44b4a654846b79023, type: 3}
-      propertyPath: m_Name
-      value: RecallButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 4865537522698878387, guid: a62623eacac036b44b4a654846b79023, type: 3}
-      propertyPath: m_Name
-      value: RecallButtonCanvas
-      objectReference: {fileID: 0}
     - target: {fileID: 5979444121840655926, guid: a62623eacac036b44b4a654846b79023, type: 3}
       propertyPath: m_Camera
       value: 
@@ -442,34 +434,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1786769192, guid: 9bdc53911a0d68341890826b6ba2c76f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786769194, guid: 9bdc53911a0d68341890826b6ba2c76f, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b0bc729fc598b88448dde70bb9c92a4d, type: 2}
-    - target: {fileID: 1786769194, guid: 9bdc53911a0d68341890826b6ba2c76f, type: 3}
-      propertyPath: m_Positions.Array.data[1].y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786769194, guid: 9bdc53911a0d68341890826b6ba2c76f, type: 3}
-      propertyPath: m_Parameters.colorGradient.ctime1
-      value: 65535
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786769194, guid: 9bdc53911a0d68341890826b6ba2c76f, type: 3}
-      propertyPath: m_Parameters.colorGradient.key1.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786769194, guid: 9bdc53911a0d68341890826b6ba2c76f, type: 3}
-      propertyPath: m_Parameters.colorGradient.key1.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786769194, guid: 9bdc53911a0d68341890826b6ba2c76f, type: 3}
-      propertyPath: m_Parameters.colorGradient.key1.r
-      value: 0.22104454
-      objectReference: {fileID: 0}
     - target: {fileID: 4144232053841236794, guid: 9bdc53911a0d68341890826b6ba2c76f, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -517,10 +481,6 @@ PrefabInstance:
     - target: {fileID: 4144232053841236795, guid: 9bdc53911a0d68341890826b6ba2c76f, type: 3}
       propertyPath: m_Name
       value: Managers
-      objectReference: {fileID: 0}
-    - target: {fileID: 5662241214852899940, guid: 9bdc53911a0d68341890826b6ba2c76f, type: 3}
-      propertyPath: gameStates
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bdc53911a0d68341890826b6ba2c76f, type: 3}
@@ -688,14 +648,6 @@ PrefabInstance:
     - target: {fileID: 334264326266328902, guid: 68b19e7b82d6c9b4ab4a052fef137ef9, type: 3}
       propertyPath: m_Name
       value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 3211416934211721213, guid: 68b19e7b82d6c9b4ab4a052fef137ef9, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3871033670437718908, guid: 68b19e7b82d6c9b4ab4a052fef137ef9, type: 3}
-      propertyPath: m_FlipX
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8921459718781377181, guid: 68b19e7b82d6c9b4ab4a052fef137ef9, type: 3}
       propertyPath: m_RootOrder
