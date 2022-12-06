@@ -9,7 +9,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ball
+  - 
   - Water
   - UI
   - 
@@ -39,15 +39,33 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 352968305
+  - name: Bckground
+    uniqueID: 3090696973
+    locked: 0
+  - name: Walls
+    uniqueID: 2264883545
+    locked: 0
+  - name: VFX
+    uniqueID: 2299258945
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: In-Game Text
-    uniqueID: 1336683771
+  - name: Balls
+    uniqueID: 3307457473
     locked: 0
-  - name: Vfx
-    uniqueID: 3872761777
+  - name: Cannon
+    uniqueID: 994365763
+    locked: 0
+  - name: Bricks
+    uniqueID: 439790635
+    locked: 0
+  - name: Blocks
+    uniqueID: 180800017
+    locked: 0
+  - name: In-Game Text
+    uniqueID: 1358136779
+    locked: 0
+  - name: UI
+    uniqueID: 4120126607
     locked: 0
