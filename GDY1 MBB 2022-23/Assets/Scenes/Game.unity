@@ -825,6 +825,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5766751310017656329, guid: df40ad0cf03eace418c1c69a710ef05e, type: 3}
+      propertyPath: m_SortingLayer
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766751310017656329, guid: df40ad0cf03eace418c1c69a710ef05e, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1204270323
+      objectReference: {fileID: 0}
     - target: {fileID: 6096453147399693539, guid: df40ad0cf03eace418c1c69a710ef05e, type: 3}
       propertyPath: m_Name
       value: 'Environment '
@@ -1068,6 +1076,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9053888977499748550, guid: 80af65a64a133f943b37046c96fd1420, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9053888977604825372, guid: 80af65a64a133f943b37046c96fd1420, type: 3}
       propertyPath: m_Pivot.x
       value: 0
