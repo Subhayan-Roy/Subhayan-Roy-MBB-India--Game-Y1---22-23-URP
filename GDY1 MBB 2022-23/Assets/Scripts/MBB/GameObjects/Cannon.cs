@@ -58,10 +58,10 @@ public class Cannon : MonoBehaviour
 	/// <returns></returns>
 	public IEnumerator ReleaseThyBalls()
 	{
-		for (int i = 0; i < poolManager.maxBallCount; i++)
+		for (int i = 0; i < poolManager.playableBallCount; i++)
 		{
 			//Instantiate(Blueprint to be spawned, where to spawn it, at what angle to be spawned)
-			GameObject spawnedBall = poolManager.FetchBallFromList();
+			GameObject spawnedBall = poolManager.FetchInactiveBallFromList();
 			spawnedBall.transform.position = transform.position;
 			yield return null;
 			spawnedBall.GetComponent<Rigidbody2D>().AddForce(transform.up * ballSpeed, ForceMode2D.Impulse);
@@ -76,7 +76,7 @@ public class Cannon : MonoBehaviour
 
 	public void ResetCannonBallCount()
 	{
-		ballCollisionCounter = poolManager.maxBallCount;
+		ballCollisionCounter = poolManager.playableBallCount;
 	}
 
 	public void ResetCannonAngle()

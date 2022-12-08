@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4144232053841236795
+--- !u!1 &6343855171162979680
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,11 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4144232053841236794}
-  - component: {fileID: 5662241214852899940}
-  - component: {fileID: 4144232053841236797}
-  - component: {fileID: 4144232055745433755}
-  - component: {fileID: 6269843967800222574}
+  - component: {fileID: 6343855171162979682}
+  - component: {fileID: 6343855171578696654}
+  - component: {fileID: 6343855171578696627}
+  - component: {fileID: 6343855171578696624}
+  - component: {fileID: 6343855171578696625}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -20,13 +20,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4144232053841236794
+--- !u!4 &6343855171162979682
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4144232053841236795}
+  m_GameObject: {fileID: 6343855171162979680}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -35,13 +35,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5662241214852899940
+--- !u!114 &6343855171578696654
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4144232053841236795}
+  m_GameObject: {fileID: 6343855171162979680}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68288608fb8bc8043843ec52fbc1d158, type: 3}
@@ -49,30 +49,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStatesVAR: 0
   gameStartTime: 3
-  maxNumberOfRounds: 5
+  maxNumberOfRounds: 10
   currentRound: 0
   brickCount: 0
---- !u!114 &4144232053841236797
+--- !u!114 &6343855171578696627
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4144232053841236795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b2cb25de18ea5841b16f00c1190853d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minimumFingerDistance: 0.25
-  isActive: 0
---- !u!114 &4144232055745433755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4144232053841236795}
+  m_GameObject: {fileID: 6343855171162979680}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0367bb26f2a92884fb5c5f930ae8ca80, type: 3}
@@ -82,14 +68,14 @@ MonoBehaviour:
   losePanelGO: {fileID: 0}
   recallButtonGO: {fileID: 0}
   countDownPanelGO: {fileID: 0}
-  countDownRunning: 0
---- !u!114 &6269843967800222574
+  countDownNumber: 0
+--- !u!114 &6343855171578696624
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4144232053841236795}
+  m_GameObject: {fileID: 6343855171162979680}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4dfb370175252c84cb83d2a94c871954, type: 3}
@@ -97,4 +83,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxBallCount: 10
   ballsList: []
-  ballPrefabGO: {fileID: 6180387109173756824, guid: 8fb33f74d72912346995b01a1897b099, type: 3}
+  ballPrefabGO: {fileID: 148628332210605841, guid: 8fb33f74d72912346995b01a1897b099, type: 3}
+--- !u!114 &6343855171578696625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6343855171162979680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b2cb25de18ea5841b16f00c1190853d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minimumFingerDistance: 0.25
+  isActive: 0

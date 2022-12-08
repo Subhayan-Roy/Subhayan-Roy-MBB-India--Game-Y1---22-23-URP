@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UpdatedCannon : MonoBehaviour
 {
@@ -26,24 +27,21 @@ public class UpdatedCannon : MonoBehaviour
 	Vector3 percentageCoordinates;
 	Vector3 percentageCoordinatesInUnits;
 
+	int pickupCounter;
+	public TextMeshPro cannonText;
+
     private void Awake()
     {
         aimLineGO.SetActive(false); //Make the Aimline disappear on level load
-        gameManager = FindObjectOfType<GameManager>();
-        poolManager = FindObjectOfType<PoolManager>();
-
 		FirstRandomization();
     }
 
     private void Start()
     {
-        ResetCannonBallCount();
+		gameManager = FindObjectOfType<GameManager>();
+		poolManager = FindObjectOfType<PoolManager>();
+		ResetCannonBallCount();
 	}
-
-    private void Update()
-    {
-
-    }
 
     public void DoOnButtonDown()
     {
@@ -74,10 +72,10 @@ public class UpdatedCannon : MonoBehaviour
 	/// <returns></returns>
 	public IEnumerator ReleaseThyBalls()
 	{
-		for (int i = 0; i < poolManager.maxBallCount; i++)
+		for (int i = 0; i < poolManager.playableBallCount; i++)
 		{
 			//Instantiate(Blueprint to be spawned, where to spawn it, at what angle to be spawned)
-			GameObject spawnedBall = poolManager.FetchBallFromList();
+			GameObject spawnedBall = poolManager.FetchInactiveBallFromList();
 			spawnedBall.transform.position = thingToRotate.position;
 			yield return null;
 			spawnedBall.GetComponent<Rigidbody2D>().AddForce(thingToRotate.up * ballSpeed, ForceMode2D.Impulse);
@@ -92,7 +90,14 @@ public class UpdatedCannon : MonoBehaviour
 
 	public void ResetCannonBallCount()
 	{
-		ballCollisionCounter = poolManager.maxBallCount;
+		if (pickupCounter != 0)
+		{
+			poolManager.IncrementBallCount(pickupCounter);
+			pickupCounter = 0;
+		}
+
+		ballCollisionCounter = poolManager.playableBallCount;
+		cannonText.text = ballCollisionCounter.ToString();
 	}
 
 	public void ResetCannonAngle()
@@ -104,7 +109,7 @@ public class UpdatedCannon : MonoBehaviour
 	{
 		ballCollisionCounter -= 1;//ballCollisionCounter = ballCollisionCounter - 1 //ballCollisionCounter--
 
-		if (ballCollisionCounter == poolManager.maxBallCount - 1)
+		if (ballCollisionCounter == poolManager.playableBallCount - 1)
 		{
 			newCannonPosition = new Vector3(pos.x,newCannonPosition.y,newCannonPosition.z);
 		}
@@ -140,6 +145,23 @@ public class UpdatedCannon : MonoBehaviour
 
 	public void DoOnPickupExtraBall()
 	{
+		pickupCounter += 1;
+	}
 
+	public void ReturnAllBalls()
+	{
+		for (int i = 0; i < poolManager.playableBallCount; i++)
+		{
+			//Instantiate(Blueprint to be spawned, where to spawn it, at what angle to be spawned)
+			GameObject activeBall = poolManager.FetchActiveBallFromList();
+
+			if (activeBall != null)
+			{
+				activeBall.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+				activeBall.transform.position = thingToRotate.position;
+			}
+		}
+
+		gameManager.ChangeGameState(GameManager.GameStatesDATA.PREPARATION);
 	}
 }

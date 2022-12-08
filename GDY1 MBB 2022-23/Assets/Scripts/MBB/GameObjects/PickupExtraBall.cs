@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class PickupExtraBall : MonoBehaviour
 {
-	private Cannon cannon;
+	private UpdatedCannon cannon;
 
 	private void Start()
 	{
-		cannon = FindObjectOfType<Cannon>();
+		cannon = FindObjectOfType<UpdatedCannon>();
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
