@@ -69,6 +69,8 @@ MonoBehaviour:
   recallButtonGO: {fileID: 0}
   countDownPanelGO: {fileID: 0}
   countDownNumber: 0
+  levelNumberText: {fileID: 0}
+  roundNumbertext: {fileID: 0}
 --- !u!114 &6343855171578696624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dfb370175252c84cb83d2a94c871954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBallCount: 10
+  playableBallCount: 50
   ballsList: []
   ballPrefabGO: {fileID: 148628332210605841, guid: 8fb33f74d72912346995b01a1897b099, type: 3}
 --- !u!114 &6343855171578696625
@@ -96,5 +98,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2cb25de18ea5841b16f00c1190853d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minimumFingerDistance: 0.25
+  minimumFingerDistance: 2
   isActive: 0

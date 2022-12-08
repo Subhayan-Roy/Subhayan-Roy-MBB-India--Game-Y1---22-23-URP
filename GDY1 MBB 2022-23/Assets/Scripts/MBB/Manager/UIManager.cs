@@ -15,6 +15,9 @@ public class UIManager : MonoBehaviour
 
     public int countDownNumber;
 
+    public TextMeshProUGUI levelNumberText;
+    public TextMeshProUGUI roundNumbertext;
+
     private void Awake()
     {
         countDownNumber = 3;
@@ -48,5 +51,15 @@ public class UIManager : MonoBehaviour
         }
 
         MakeUIObjectInactive(countDownPanelGO);
+    }
+
+    public void SetRoundNumber(int roundNumber)
+    {
+        roundNumbertext.text = "Round - " + roundNumber.ToString();
+    }
+
+    public void SetLevelNumber(int levelNumber)
+    {
+        levelNumberText.text = "Level - " + levelNumber.ToString();
     }
 }

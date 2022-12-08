@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -51,6 +52,7 @@ public class GameManager : MonoBehaviour
 		uiManager.MakeUIObjectInactive(uiManager.recallButtonGO);
 		uiManager.MakeUIObjectInactive(uiManager.victoryPanelGO);
 		uiManager.MakeUIObjectInactive(uiManager.losePanelGO);
+		uiManager.SetLevelNumber(SceneManager.GetActiveScene().buildIndex);
 	}
 
     private void Update()
@@ -78,6 +80,7 @@ public class GameManager : MonoBehaviour
 							uiManager.MakeUIObjectInactive(uiManager.recallButtonGO);
 
 							currentRound += 1;
+							uiManager.SetRoundNumber(currentRound);
 						}
 					}
 					else if (currentRound > maxNumberOfRounds)
@@ -119,10 +122,18 @@ public class GameManager : MonoBehaviour
 
 			case GameStatesDATA.LEVELVICTORY:
 
-				if (!uiManager.victoryPanelGO.activeInHierarchy)
+				if (SceneManager.GetActiveScene().buildIndex + 1 >= SceneManager.sceneCountInBuildSettings - 1)
 				{
-					uiManager.MakeUIObjectActive(uiManager.victoryPanelGO);
+					SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1, LoadSceneMode.Single);
 				}
+				else
+				{
+					if (!uiManager.victoryPanelGO.activeInHierarchy)
+					{
+						uiManager.MakeUIObjectActive(uiManager.victoryPanelGO);
+					}
+				}
+				
 
 				break;
 

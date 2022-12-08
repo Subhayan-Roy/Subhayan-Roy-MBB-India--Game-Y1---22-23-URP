@@ -15,16 +15,20 @@ public class InputManager : MonoBehaviour
 
 	private UpdatedCannon cannon; //reference to the Cannon instance
 	GameManager gameManager;
+	FingerFeedback fingerFeedback;
 
-    public void Awake()
+	public void Awake()
     {
-		cannon = FindObjectOfType<UpdatedCannon>();
-		gameManager = GetComponent<GameManager>();
+		
 	}
 
     public void Start()
 	{
-		
+		cannon = FindObjectOfType<UpdatedCannon>();
+		gameManager = GetComponent<GameManager>();
+		fingerFeedback = FindObjectOfType<FingerFeedback>();
+
+		fingerFeedback.SetThreshold(minimumFingerDistance);
 	}
 
 	// Update is called once per frame
@@ -41,6 +45,7 @@ public class InputManager : MonoBehaviour
 		{
 			//Call the StartDrag function passing location of finger as parameter
 			StartDrag(locationOfFinger);
+			fingerFeedback.StartDrag(locationOfFinger);
 		}
 
 		//If the finger is holding down and dragging across the screen
@@ -48,6 +53,7 @@ public class InputManager : MonoBehaviour
 		{
 			//Call the ContinueDrag function passing location of finger as parameter
 			ContinueDrag(locationOfFinger);
+			fingerFeedback.Dragging((locationOfFinger));
 		}
 
 		//If the finger is lifted from the screen
@@ -55,6 +61,7 @@ public class InputManager : MonoBehaviour
 		{
 			//Shifted to here to solve the aimline and no input named as the "Aditya" bug
 			cannon.DoOnButtonUp(); //Makes Aimline disappear only irrespective of whether it's a tap or a drag
+			fingerFeedback.EndDrag();
 
 			if ((startDragPosition - endDragPosition).magnitude >= minimumFingerDistance) //If finger drag distance is more than minimum, validate the input
 			{
