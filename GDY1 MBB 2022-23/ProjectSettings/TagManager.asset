@@ -45,9 +45,6 @@ TagManager:
   - name: Walls
     uniqueID: 2264883545
     locked: 0
-  - name: VFX
-    uniqueID: 2299258945
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -62,6 +59,9 @@ TagManager:
     locked: 0
   - name: Blocks
     uniqueID: 180800017
+    locked: 0
+  - name: VFX
+    uniqueID: 2299258945
     locked: 0
   - name: In-Game Text
     uniqueID: 1358136779
